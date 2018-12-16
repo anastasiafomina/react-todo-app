@@ -45,16 +45,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <TodoList 
-          addItem={this.addItem} 
-          handleInput={this.handleInput}
-          currentItem={this.state.currentItem}
-        />
-        <TodoItems 
-          entries={this.state.items}
-          deleteItem={this.deleteItem}
-         />
+      <div>
+        <h1>Todo list</h1>
+        <div className="container">
+          <div className="row">
+            <TodoList 
+              addItem={this.addItem} 
+              handleInput={this.handleInput}
+              currentItem={this.state.currentItem}
+            />
+            <TodoItems 
+              entries={this.state.items}
+              deleteItem={this.deleteItem}
+            />
+          </div>
+        </div>
       </div>
     )
   }
