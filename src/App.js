@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import TodoList from './TodoList'
-import TodoItems from './TodoItems'
+import TodoInput from './components/TodoInput';
+import TodoItems from './components/TodoItems';
+import './styles/App.css';
 
 class App extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ class App extends Component {
         <h1>Todo list</h1>
         <div className="container">
           <div className="row">
-            <TodoList 
+            <TodoInput 
               addItem={this.addItem} 
               handleInput={this.handleInput}
               currentItem={this.state.currentItem}

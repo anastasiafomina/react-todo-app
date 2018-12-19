@@ -1,0 +1,72 @@
+.listOfTasks li {
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  margin-left: -30px;
+  border-radius: 5px;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.todoListMain {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+@media (min-width: 768px) {
+  .todoListMain input {
+    flex-wrap: row nowrap;
+    justify-content: flex-end;
+  }
+}
+
+.todoListMain input {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  border: 2px solid white;
+  word-wrap: break-word;
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .todoListMain input {
+    width: 60%;
+  }
+}
+
+.todoListMain button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #6db8bb;
+  color: #FFF;
+  border: 2px solid #6db8bb;
+}
+
+.todoListMain button:hover {
+  background-color: #05647a;
+  border: 2px solid #05647a;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 80%;
+  }
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+@media (min-width: 768px) {
+  .row {
+    width: 50%;
+  }
+}
