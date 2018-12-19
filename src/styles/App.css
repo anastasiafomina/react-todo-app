@@ -9,40 +9,47 @@
 }
 
 .todoListMain {
-  display: flex;
-  flex-flow: column wrap;
+  margin: 10px;
+  text-align: center;
+  background-color: pink;
 }
 
 @media (min-width: 768px) {
-  .todoListMain input {
-    flex-wrap: row nowrap;
-    justify-content: flex-end;
+  .todoListMain {
+    display: flex;
+    justify-content: center;
+    
   }
 }
 
 .todoListMain input {
   padding: 10px;
-  margin: 10px;
   font-size: 16px;
   border: 2px solid white;
-  word-wrap: break-word;
-  width: 90%;
+  background-color: blue;
+  width: calc(100% - 24px);
 }
 
 @media (min-width: 768px) {
   .todoListMain input {
-    width: 60%;
+    width: 100%;
   }
 }
 
 .todoListMain button {
   padding: 10px;
+  margin-top: 10px;
   font-size: 16px;
   background-color: #6db8bb;
   color: #FFF;
   border: 2px solid #6db8bb;
 }
 
+@media (min-width: 768px) {
+  .todoListMain button {
+    margin-top: 0;
+  }
+}
 .todoListMain button:hover {
   background-color: #05647a;
   border: 2px solid #05647a;
@@ -51,6 +58,7 @@
 .container {
   margin-left: auto;
   margin-right: auto;
+  background-color: green;
 }
 
 @media (min-width: 992px) {
@@ -63,6 +71,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+  background-color: yellow;
 }
 
 @media (min-width: 768px) {

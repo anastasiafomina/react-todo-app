@@ -8,7 +8,7 @@ class TodoInput extends Component {
           <input 
             type="text"
             placeholder="What needs to be done?" 
-            value={this.props.currentItem.text}
+            value={this.props.text}
             onChange={this.props.handleInput}
           />
         <button type="submit"> Add Task </button>    
