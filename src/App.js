@@ -7,10 +7,17 @@ import uuid4 from 'uuid/v4';
 class App extends Component {
   constructor(props) {
     super(props)
+
+    const itemsFromStorage = localStorage.getItem("itemsKey")
+    // itemsFromStorage - это строка
+    const parsedItems = JSON.parse(itemsFromStorage) || {}
+    // парсим строку обратно в объект
+    const itemsForState = parsedItems.savedItems || []
+    // достаем оттуда сами итемы, т.к. сохраняли их как объект 
     this.state = {
-      items: [],
+      items: itemsForState,
       text: ''
-    }
+    } 
   }
 
   handleInput = e => {
@@ -31,6 +38,8 @@ class App extends Component {
       this.setState({
         items: items,
         text: ''
+      }, () => {
+      localStorage.setItem('itemsKey', JSON.stringify( { savedItems: items }))
       })
     }
   }
