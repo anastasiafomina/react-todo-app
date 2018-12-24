@@ -11,13 +11,12 @@
 .todoListMain {
   margin: 10px;
   text-align: center;
-  background-color: pink;
 }
 
 @media (min-width: 768px) {
   .todoListMain {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     
   }
 }
@@ -26,13 +25,13 @@
   padding: 10px;
   font-size: 16px;
   border: 2px solid white;
-  background-color: blue;
+  border-radius: 5px;
   width: calc(100% - 24px);
 }
 
 @media (min-width: 768px) {
   .todoListMain input {
-    width: 100%;
+    width: 60%;
   }
 }
 
@@ -43,6 +42,7 @@
   background-color: #6db8bb;
   color: #FFF;
   border: 2px solid #6db8bb;
+  border-radius: 2px;
 }
 
 @media (min-width: 768px) {
@@ -58,7 +58,6 @@
 .container {
   margin-left: auto;
   margin-right: auto;
-  background-color: green;
 }
 
 @media (min-width: 992px) {
@@ -71,7 +70,6 @@
   margin-left: auto;
   margin-right: auto;
   width: 80%;
-  background-color: yellow;
 }
 
 @media (min-width: 768px) {

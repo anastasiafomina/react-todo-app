@@ -39,7 +39,7 @@ class App extends Component {
         items: items,
         text: ''
       }, () => {
-      localStorage.setItem('itemsKey', JSON.stringify( { savedItems: items }))
+        localStorage.setItem('itemsKey', JSON.stringify( { savedItems: items }))
       })
     }
   }
@@ -48,6 +48,8 @@ class App extends Component {
     const filteredItems = this.state.items.filter(item => item.key !== key)
     this.setState({
       items: filteredItems,
+    }, () => {
+      localStorage.setItem('itemsKey', JSON.stringify( { savedItems: filteredItems }))
     })
   }
 
