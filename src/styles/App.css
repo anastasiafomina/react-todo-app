@@ -31,7 +31,7 @@
 
 @media (min-width: 768px) {
   .todoListMain input {
-    width: 60%;
+    width: calc(100% - 130px);
   }
 }
 
@@ -76,4 +76,8 @@
   .row {
     width: 50%;
   }
+}
+
+.crossOut {
+  text-decoration: line-through;
 }

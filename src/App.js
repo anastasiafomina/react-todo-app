@@ -31,7 +31,8 @@ class App extends Component {
     const newItem = {
       text: this.state.text,
       date: Date.now(),
-      key: uuid4()
+      key: uuid4(),
+      isDone: false
     }
     if (newItem.text !== '') {
       const items = [...this.state.items, newItem]
@@ -44,6 +45,24 @@ class App extends Component {
     }
   }
 
+  crossOutOnClick = key => {
+    const index = this.state.items.findIndex(item => item.key === key)
+    const crossedItem = {
+      text: this.state.items[index].text,
+      date: this.state.items[index].date,
+      key: this.state.items[index].key,
+      isDone: this.state.items[index].isDone ? false: true
+    }
+    const newCrossedItems = [...this.state.items]
+    newCrossedItems.splice(index, 1, crossedItem)
+    this.setState({
+      items: newCrossedItems,
+      text: ''
+    }, () => {
+      localStorage.setItem('itemsKey', JSON.stringify( { savedItems: newCrossedItems }))
+    })
+  }
+
   deleteItem = key => {
     const filteredItems = this.state.items.filter(item => item.key !== key)
     this.setState({
@@ -54,7 +73,6 @@ class App extends Component {
   }
 
   render() {
-    
     return (
       <div>
         <h1>Todo list</h1>
@@ -68,6 +86,7 @@ class App extends Component {
             <TodoItems 
               entries={this.state.items}
               deleteItem={this.deleteItem}
+              crossOutOnClick={this.crossOutOnClick}
             />
           </div>
         </div>
