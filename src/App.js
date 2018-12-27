@@ -70,6 +70,17 @@ class App extends Component {
     })
   }
 
+  deleteAll = () => {
+    if (this.state.items.length >= 3) {
+      const deletedAll = []
+      this.setState({
+        items: deletedAll
+      }, () => {
+        localStorage.setItem('itemsKey', JSON.stringify( { savedItems: deletedAll }))
+      })
+    }
+  }
+
   render() {
     return (
       <div>
@@ -86,6 +97,12 @@ class App extends Component {
               deleteItem={this.deleteItem}
               crossOutOnClick={this.crossOutOnClick}
             />
+            <button
+              onClick={this.deleteAll}
+              className="deleteAllButton"
+            >
+              Delete all
+            </button>
           </div>
         </div>
       </div>
