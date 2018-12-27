@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import TodoInput from './components/TodoInput';
-import TodoItems from './components/TodoItems';
-import './styles/App.css';
-import uuid4 from 'uuid/v4';
+import React, { Component } from 'react'
+import TodoInput from './components/TodoInput'
+import TodoItems from './components/TodoItems'
+import './styles/App.css'
+import uuid4 from 'uuid/v4'
 
 class App extends Component {
   constructor(props) {
@@ -48,9 +48,7 @@ class App extends Component {
   crossOutOnClick = key => {
     const index = this.state.items.findIndex(item => item.key === key)
     const crossedItem = {
-      text: this.state.items[index].text,
-      date: this.state.items[index].date,
-      key: this.state.items[index].key,
+      ...this.state.items[index],
       isDone: this.state.items[index].isDone ? false: true
     }
     const newCrossedItems = [...this.state.items]
@@ -95,4 +93,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

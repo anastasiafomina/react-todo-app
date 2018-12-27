@@ -16,4 +16,4 @@ class TodoInput extends Component {
   }
 }
 
-export default TodoInput;
+export default TodoInput
