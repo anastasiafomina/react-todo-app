@@ -3,9 +3,11 @@ import React, { Component } from 'react'
 class TodoItems extends Component {
   renderTask = item => {
     return (
-      <div className="taskLine">
+      <div 
+        className="taskLine"
+        key={item.key} 
+      >
         <li 
-          key={item.key} 
           onClick={() => this.props.crossOutOnClick(item.key)}
           className={ (item.isDone) ? 'crossOut' : '' }
         >

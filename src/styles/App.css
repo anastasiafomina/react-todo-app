@@ -3,6 +3,7 @@
   padding: 10px;
   border-radius: 5px;
   width: 100%;
+  max-width: calc(100% - 60px);
   margin-right: 10px;
   word-wrap: break-word;
 }
