@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
 
+const months = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек']
+  function getCurrentMonth (date) {
+    const index = date.getMonth()
+    return months[index]
+  }
+
 class TodoItems extends Component {
   renderTask = item => {
     const date = new Date(item.date)
-    const months = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек']
-    function getCurrentMonth () {
-      const index = date.getMonth()
-      return months[index]
-    }
     const minutes = (date.getMinutes() < 10) ? ("0" + date.getMinutes()) : date.getMinutes()
     const hours = (date.getHours() < 10) ? ("0" + date.getHours()) : date.getHours()
 
-    const itemDateTime = date.getDate() + ' ' + getCurrentMonth() + ', ' + hours + ':' + minutes
-    
+    const itemDateTime = date.getDate() + ' ' + getCurrentMonth(date) + ', ' + hours + ':' + minutes
+
     return (
       <div 
         className="taskLine"
