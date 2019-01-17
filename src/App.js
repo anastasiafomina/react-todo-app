@@ -17,7 +17,8 @@ class App extends Component {
     this.state = {
       items: itemsForState,
       text: '',
-      hiding: false
+      hidingCompleted: false,
+      hidingActive: false
     } 
   }
 
@@ -94,21 +95,30 @@ class App extends Component {
     return null
   }
 
-  hidingTasks = () => {
+  hidingCompletedTasks = () => {
     this.setState({
-      hiding: !this.state.hiding
+      hidingCompleted: !this.state.hidingCompleted
+    })
+  }
+
+  hidingActiveTasks = () => {
+    this.setState({
+      hidingActive: !this.state.hidingActive
     })
   }
 
   hideCompleted = () => {
     return (
       <div className="hiding">
-      <input 
-        type="checkbox"
-        id="hidingCompleted"
-        onChange={this.hidingTasks}
-      />
-      <label htmlFor="hidingCompleted">Active</label>
+      <button onClick={this.hidingCompletedTasks}>Active</button>
+      </div>
+    )
+  }
+
+  hideActive = () => {
+    return (
+      <div className="hiding">
+      <button onClick={this.hidingActiveTasks}>Completed</button>
       </div>
     )
   }
@@ -128,9 +138,12 @@ class App extends Component {
               entries={this.state.items}
               deleteItem={this.deleteItem}
               crossOutOnClick={this.crossOutOnClick}
-              hiding={this.state.hiding}
+              hidingCompleted={this.state.hidingCompleted}
+              hidingActive={this.state.hidingActive}
             />
             {this.hideCompleted()}
+
+            {this.hideActive()}
 
             {this.renderDeleteButton()}
           </div>
