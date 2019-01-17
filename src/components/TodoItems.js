@@ -38,7 +38,8 @@ class TodoItems extends Component {
   }
   render() {
     const { entries } = this.props
-    const listItems = entries.map(this.renderTask)
+    const listItems = (this.props.hiding) ? entries.filter(item => item.isDone === false).map(this.renderTask) 
+    : entries.map(this.renderTask)
     return <ol className="listOfTasks">{listItems}</ol>
   }
 }

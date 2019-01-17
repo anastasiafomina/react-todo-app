@@ -100,7 +100,7 @@
 
 .deleteAllButton {
   margin-left: 10px;
-  width: 80px;
+  font-size: 12px;
 }
 
 .itemDateTime {
@@ -108,4 +108,8 @@ margin-bottom: 5px;
 margin-left: 10px;
 font-size: 12px;
 color: #aaaaaa;
+}
+
+.hiding {
+  margin: 10px;
 }

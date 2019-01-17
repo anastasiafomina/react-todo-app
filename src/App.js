@@ -16,7 +16,8 @@ class App extends Component {
     // достаем оттуда сами итемы, т.к. сохраняли их как объект 
     this.state = {
       items: itemsForState,
-      text: ''
+      text: '',
+      hiding: false
     } 
   }
 
@@ -92,8 +93,26 @@ class App extends Component {
     }
     return null
   }
-  
 
+  hidingTasks = () => {
+    this.setState({
+      hiding: !this.state.hiding
+    })
+  }
+
+  hideCompleted = () => {
+    return (
+      <div className="hiding">
+      <input 
+        type="checkbox"
+        id="hidingCompleted"
+        onChange={this.hidingTasks}
+      />
+      <label htmlFor="hidingCompleted">Active</label>
+      </div>
+    )
+  }
+  
   render() {
     return (
       <div>
@@ -109,7 +128,10 @@ class App extends Component {
               entries={this.state.items}
               deleteItem={this.deleteItem}
               crossOutOnClick={this.crossOutOnClick}
+              hiding={this.state.hiding}
             />
+            {this.hideCompleted()}
+
             {this.renderDeleteButton()}
           </div>
         </div>
