@@ -97,29 +97,37 @@ class App extends Component {
 
   hidingCompletedTasks = () => {
     this.setState({
-      hidingCompleted: !this.state.hidingCompleted
+      hidingCompleted: !this.state.hidingCompleted,
+      hidingActive: false
     })
   }
 
   hidingActiveTasks = () => {
     this.setState({
-      hidingActive: !this.state.hidingActive
+      hidingActive: !this.state.hidingActive,
+      hidingCompleted: false
     })
   }
 
   hideCompleted = () => {
     return (
-      <div className="hiding">
-      <button onClick={this.hidingCompletedTasks}>Active</button>
-      </div>
+      <button 
+        onClick={this.hidingCompletedTasks}
+        className={`hiding${this.state.hidingCompleted && this.state.hidingActive === false ? ' activatedButton' : ''}`}
+      >
+        Active
+      </button>
     )
   }
 
   hideActive = () => {
     return (
-      <div className="hiding">
-      <button onClick={this.hidingActiveTasks}>Completed</button>
-      </div>
+      <button 
+        onClick={this.hidingActiveTasks}
+        className={`hiding${this.state.hidingActive && this.state.hidingCompleted === false ? ' activatedButton' : ''}`}
+      >
+        Completed
+      </button>
     )
   }
   
@@ -141,11 +149,11 @@ class App extends Component {
               hidingCompleted={this.state.hidingCompleted}
               hidingActive={this.state.hidingActive}
             />
-            {this.hideCompleted()}
-
-            {this.hideActive()}
-
-            {this.renderDeleteButton()}
+            <div className="footerButtons">
+              {this.hideCompleted()}
+              {this.hideActive()}
+              {this.renderDeleteButton()}
+            </div>
           </div>
         </div>
       </div>
