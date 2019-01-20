@@ -130,6 +130,24 @@ class App extends Component {
       </button>
     )
   }
+
+  showingAllTasks = () => {
+    this.setState({
+      hidingActive: false,
+      hidingCompleted: false,
+    }) 
+  }
+
+  showAll = () => {
+    return (
+      <button 
+        onClick={this.showingAllTasks}
+        className={`hiding${this.state.hidingActive === false && this.state.hidingCompleted === false ? ' activatedButton' : ''}`}
+      >
+        All
+      </button>
+    )
+  }
   
   render() {
     return (
@@ -150,6 +168,7 @@ class App extends Component {
               hidingActive={this.state.hidingActive}
             />
             <div className="footerButtons">
+              {this.showAll()}
               {this.hideCompleted()}
               {this.hideActive()}
               {this.renderDeleteButton()}

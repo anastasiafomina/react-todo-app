@@ -36,11 +36,11 @@
 }
 
 .todoListMain button {
-  padding: 10px;
   margin-top: 10px;
+  padding: 10px;
   font-size: 16px;
-  background-color: #6db8bb;
   color: #FFF;
+  background-color: #6db8bb;
   border: 2px solid #6db8bb;
   border-radius: 2px;
 }
@@ -105,14 +105,13 @@
 
 .deleteAllButton {
   margin: 10px;
+  padding: 5px 10px 5px 10px;
   font-size: 14px;
+  color: white;
   border: none;
-  width: 100px;
-  height: 30px;
   border-radius: 2px;
   background-color: #f46b5f;
   opacity: 0.5;
-  color: white;
 }
 
 .deleteAllButton:hover {
@@ -128,10 +127,9 @@
 
 .hiding {
   margin: 10px;
-  border: none;
+  padding: 5px 10px 5px 10px;
   font-size: 14px;
-  width: 100px;
-  height: 30px;
+  border: none;
   border-radius: 2px;
 }
 
